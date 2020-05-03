@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Heading, Button, Flex } from "theme-ui";
 import netlifyIdentity from "netlify-identity-widget";
 
-netlifyIdentity.init({});
+// netlifyIdentity.init({});
 
 export default props => (
   <Container>
