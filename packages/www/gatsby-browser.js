@@ -12,7 +12,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
     uri:
-      "https://serverless-todo-netlify-fauna-egghead.netlify.com/.netlify/functions/graphql"
+      "https://serverless-todo-netlify-fauna-egghead.netlify.com/.netlify/functions/graphql/"
   })
 });
 
