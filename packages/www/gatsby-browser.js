@@ -3,7 +3,7 @@ const {
   ApolloProvider,
   ApolloClient,
   HttpLink,
-  InMemoryCache,
+  InMemoryCache
 } = require("@apollo/client");
 const { setContext } = require("apollo-link-context");
 const netlifyIdentity = require("netlify-identity-widget");
@@ -17,19 +17,17 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      Authorization: token ? `Bearer ${token}` : "",
-    },
+      Authorization: token ? `Bearer ${token}` : ""
+    }
   };
 });
 
 const httpLink = new HttpLink({
-  uri:
-    // "https://app.netlify.com/sites/jamstack-jam/functions/graphql"
-    "https://jamstack-jam.netlify.app/.netlify/functions/graphql",
+  uri: "/.netlify/functions/graphql"
 });
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  link: authLink.concat(httpLink),
+  link: authLink.concat(httpLink)
 });
 
 exports.wrapRootElement = ({ element }) => {
