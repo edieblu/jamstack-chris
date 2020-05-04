@@ -11,7 +11,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
     uri:
-      "https://app.netlify.com/sites/jamstack-jam/functions/graphql"
+      // "https://app.netlify.com/sites/jamstack-jam/functions/graphql"
+      "https://jamstack-jam.netlify.app/.netlify/functions/graphql"
   })
 });
 
